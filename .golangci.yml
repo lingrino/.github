@@ -23,7 +23,6 @@ linters:
     - gosimple
     - govet
     - ineffassign
-    - interfacer
     - lll
     - maligned
     - misspell
@@ -41,10 +40,26 @@ linters:
     - varcheck
     - whitespace
   disable:
-    - wsl
+    - wsl # too strict
+    - interfacer # deprecated
 
 linters-settings:
   gocognit:
-    min-complexity: 20
+    min-complexity: 30
   gocyclo:
-    min-complexity: 20
+    min-complexity: 30
+  gomnd:
+    settings:
+      mnd:
+        # don't include the "operation" and "assign"
+        checks: argument,case,condition,return
+
+issues:
+  exclude-rules:
+    - path: _test.go
+      linters:
+        - dupl # many functions in tests look like duplicates
+        - funlen # test function can be very long due to test cases
+        - gocognit # test functions can be cognitively high
+        - gomnd # there are many magic numbers in tests
+        - lll # test mocks can have long lines
