@@ -1,7 +1,8 @@
 name: Repo - Validate
 
 on:
-  - push
+  push:
+  workflow_dispatch:
 
 jobs:
   validate:
