@@ -18,24 +18,24 @@ jobs:
         uses: avto-dev/markdown-lint@v1
         with:
           args: ./README.md
-          config: ./markdownlint.json
+          config: ./.markdownlint.json
       - name: Code of Conduct Lint
         uses: avto-dev/markdown-lint@v1
         with:
           args: ./CODE_OF_CONDUCT.md
-          config: ./markdownlint.json
+          config: ./.markdownlint.json
       - name: Contributing Lint
         uses: avto-dev/markdown-lint@v1
         with:
           args: ./CONTRIBUTING.md
-          config: ./markdownlint.json
+          config: ./.markdownlint.json
       - name: Security Lint
         uses: avto-dev/markdown-lint@v1
         with:
           args: ./SECURITY.md
-          config: ./markdownlint.json
+          config: ./.markdownlint.json
       - name: Support Lint
         uses: avto-dev/markdown-lint@v1
         with:
           args: ./SUPPORT.md
-          config: ./markdownlint.json
+          config: ./.markdownlint.json
